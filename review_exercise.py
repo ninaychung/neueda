@@ -17,12 +17,6 @@ def main():
 def startGame(d):
     r = random.randint(1,d)
 
-    if r % 2 == 0:
-        hint = 'even'
-    else:
-        hint = 'odd'
-
-
     user_input = input('''Enter a guess between 1 to {0}. 
     -1 to quit. -2 for a hint: '''.format(int(d)))
 
