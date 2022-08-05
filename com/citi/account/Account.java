@@ -1,6 +1,6 @@
 package com.citi.account;
 
-public class Account {
+public abstract class Account {
 
     private String name;
     private double balance;
@@ -58,8 +58,6 @@ public class Account {
         interestRate = newInterestRate;
     }
 
-    public void addInterest() {
-        this.balance *= (1 + interestRate);
-    }
+    public abstract void addInterest();
 
 }

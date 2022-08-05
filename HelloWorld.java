@@ -2,19 +2,24 @@ import static java.lang.Math.*;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        Set<Car> cars = new HashSet<>();
+        Set<Car> cars = new TreeSet<>(/* new CarModelComparator() */);
         cars.add(new Car("Mazda", "323F"));
         cars.add(new Car("Delorean", "DMC12"));
         cars.add(new Car("Volvo", "340 Sport"));
         // without overriding equals and hashcode in Car.java, this duplicate will show
         // up because they are thought of as diff objects
         cars.add(new Car("Mazda", "323F"));
-        for (Car c : cars) {
-            System.out.println(c.getMake() + "  " + c.getModel());
-        }
+        // for (Car c : cars) {
+        // System.out.println(c.getMake() + " " + c.getModel());
+        // }
+
+        // accept method implementation
+        // lambdas are a shorter version of interfaces
+        cars.forEach((car) -> System.out.println(car.getMake() + " " + car.getModel()));
 
         Car car1 = new Car();
         SportsCar car2 = new SportsCar();

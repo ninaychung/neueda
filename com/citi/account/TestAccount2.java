@@ -18,7 +18,7 @@ public class TestAccount2 {
         String[] names = { "Picard", "Ryker", "Worf", "Troy", "Data" };
 
         for (int i = 0; i < arrayOfAccounts.length; i++) {
-            arrayOfAccounts[i] = new Account(names[i], amounts[i]);
+            arrayOfAccounts[i] = new SavingsAccount(names[i], amounts[i]);
             System.out
                     .println("New Account added. Name: " + names[i] + " Amount: $" + String.format("%.2f", amounts[i]));
             arrayOfAccounts[i].addInterest();

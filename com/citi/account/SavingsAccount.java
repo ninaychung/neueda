@@ -8,4 +8,11 @@ public class SavingsAccount extends Account {
         super(name, balance);
 
     }
+
+    // add interest method from the subclass SavingsAccount
+    @Override
+    public void addInterest() {
+        setBalance(getBalance() * 1.4);
+    }
+
 }

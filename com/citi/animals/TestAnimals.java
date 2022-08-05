@@ -5,6 +5,17 @@ import java.util.List;
 
 public class TestAnimals {
     public static void main(String[] args) {
+        Pet myPetDog = () -> {
+
+            System.out.println("feed dog");
+            System.out.println("Clean the bowl");
+
+        };
+        myPetDog.feed();
+
+        Maths myMaths = (op1, op2) -> op1 + op2;
+        System.out.println(myMaths.add(1, 3));
+
         List<Cat> cats = new ArrayList<>();
         cats.add(new Cat());
         cats.add(new Cat());
@@ -62,4 +73,8 @@ public class TestAnimals {
         }
     }
 
+}
+
+interface Maths {
+    int add(int a, int b);
 }

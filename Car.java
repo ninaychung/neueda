@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Car extends Vehicle {
+public class Car extends Vehicle implements Comparable {
     // properties
     // protected String make; // protected: car can see it, and subclasses of Car
     // (including sportscar)
@@ -48,6 +48,11 @@ public class Car extends Vehicle {
         return Objects.equals(make, car.make) && Objects.equals(model, car.model);
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#hashCode()
+     */
     @Override
     // if two objects are the same, they should return the same hashcode
     // else should return diff hashcodes
@@ -55,6 +60,13 @@ public class Car extends Vehicle {
     public int hashCode() {
         return Objects.hash(make, model);
 
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        // TODO Auto-generated method stub
+        return speed;
+        // return make.compareTo((Car)o.make);
     }
 
 }
