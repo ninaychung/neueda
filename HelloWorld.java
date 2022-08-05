@@ -1,7 +1,21 @@
 import static java.lang.Math.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class HelloWorld {
     public static void main(String[] args) {
+        Set<Car> cars = new HashSet<>();
+        cars.add(new Car("Mazda", "323F"));
+        cars.add(new Car("Delorean", "DMC12"));
+        cars.add(new Car("Volvo", "340 Sport"));
+        // without overriding equals and hashcode in Car.java, this duplicate will show
+        // up because they are thought of as diff objects
+        cars.add(new Car("Mazda", "323F"));
+        for (Car c : cars) {
+            System.out.println(c.getMake() + "  " + c.getModel());
+        }
+
         Car car1 = new Car();
         SportsCar car2 = new SportsCar();
         Car car3 = new SportsCar();

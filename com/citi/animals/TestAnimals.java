@@ -1,7 +1,17 @@
 package com.citi.animals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestAnimals {
     public static void main(String[] args) {
+        List<Cat> cats = new ArrayList<>();
+        cats.add(new Cat());
+        cats.add(new Cat());
+        for (Cat c : cats) {
+            c.purr();
+        }
+
         Animal a = new Koala();
         Animal a1 = new Alligator();
         Animal aa = new Animal() {

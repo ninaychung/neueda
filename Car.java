@@ -1,6 +1,9 @@
-public class Car {
+import java.util.Objects;
+
+public class Car extends Vehicle {
     // properties
-    protected String make; // protected: car can see it, and subclasses of Car (including sportscar)
+    // protected String make; // protected: car can see it, and subclasses of Car
+    // (including sportscar)
     // caviat with protect: any class in the saame package/folder can also see it
     // four options of visibility:
     // private: in the class
@@ -10,6 +13,7 @@ public class Car {
     // C# they have five (protected and protected internal)
     private String model;
     private int speed;
+    private String make;
 
     // constructor
     public Car(String make, String model) {
@@ -22,8 +26,35 @@ public class Car {
 
     }
 
+    public String getMake() {
+        return this.make;
+    }
+
+    public String getModel() {
+        return this.model;
+    }
+
     public void accelerate() {
         speed++;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Car car = (Car) o;
+        return Objects.equals(make, car.make) && Objects.equals(model, car.model);
+    }
+
+    @Override
+    // if two objects are the same, they should return the same hashcode
+    // else should return diff hashcodes
+    // Object class starting from Java 7
+    public int hashCode() {
+        return Objects.hash(make, model);
+
     }
 
 }

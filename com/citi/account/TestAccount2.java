@@ -1,3 +1,5 @@
+package com.citi.account;
+
 public class TestAccount2 {
     public static void main(String[] args) {
         String name = "Nick";
