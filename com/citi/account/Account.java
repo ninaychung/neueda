@@ -1,6 +1,6 @@
 package com.citi.account;
 
-public abstract class Account {
+public abstract class Account implements Detailable {
 
     private String name;
     private double balance;
@@ -59,5 +59,11 @@ public abstract class Account {
     }
 
     public abstract void addInterest();
+
+    @Override
+    public String getDetails() {
+        return "Name: " + getName() + " Balance: " + getBalance();
+
+    }
 
 }
