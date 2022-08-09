@@ -5,6 +5,11 @@ import java.util.List;
 
 public class TestAnimals {
     public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(PetConfiguration.class);
+        Person person = context.getBean(Person.class);
+        Pet pet = context.getBean(Pet.class);
+        System.out.println(pet);
+        /*
         Pet myPetDog = () -> {
 
             System.out.println("feed dog");
@@ -71,6 +76,8 @@ public class TestAnimals {
             Cat cat3 = (Cat) pt;
             cat3.purr();
         }
+        */
+
     }
 
 }
