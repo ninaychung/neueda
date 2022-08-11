@@ -8,9 +8,10 @@ import static org.junit.Assert.assertTrue;
 
 public class TestStrings {
     private String string1, string2,string3;
-    @Before // runs before each test,
-    // (not just once before all b/c one test can cause others to break)
-    // watch being smashed example
+    // @BeforeClass will only run ONCE before all tests
+    // @After runs after EACH test
+    @Before // runs before EVERY test,
+    // why? watch being smashed example
     public void initializeString() {
         string1 = "hello";
         string2 = "hello";
